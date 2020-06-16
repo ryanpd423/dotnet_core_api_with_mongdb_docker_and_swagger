@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{097BD525-7119-4CA4-ABB5-EB5E4A209E64}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MedicineCabinet_CRUD_API" expanded="True">
+            <Node name="MedicineCabinet_CRUD_API" expanded="True">
+              <Node name="Services" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>MedicineCabinet_CRUD_API_Tests/MedicineCabinet_CRUD_API_Tests.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/Ryanpd423/Desktop/Desktop_Ryans/dev/dotnet_apps/dotnet_core_api_with_mongodb_docker_and_swagger/MedicineCabinet_CRUD_API/Services/MedicineService.cs" relfile="Services/MedicineService.cs" line="22" column="9" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.MedicineCabinet__CRUD__API PreferredExecutionTarget="/Applications/Safari.app" />
+</Properties>

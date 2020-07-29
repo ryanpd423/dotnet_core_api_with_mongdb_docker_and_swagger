@@ -1,9 +1,12 @@
+using System;
+using MedicineCabinet_CRUD_API.Models;
 using MedicineCabinet_CRUD_API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 
 namespace MedicineCabinet_CRUD_API
@@ -20,9 +23,18 @@ namespace MedicineCabinet_CRUD_API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // requires using Microsoft.Extensions.Options
+            services.Configure<MongoMedicineDbDatabaseSettings>(
+                Configuration.GetSection(nameof(MongoMedicineDbDatabaseSettings)));
+
+            services.AddSingleton<IMongoMedicineDbDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<MongoMedicineDbDatabaseSettings>>().Value);
+
             services.AddScoped<IMedicineService, MedicineService>();
 
             services.AddControllers();
+
+            Console.WriteLine("YOOOOO" + services.Count);
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>

@@ -1,0 +1,8 @@
+use test
+db.createUser(
+  {
+    user: "medicineDbAdmin",
+    pwd:  passwordPrompt(),   // or cleartext password
+    roles: [ { role: "readWrite", db: "MongoMedicineDb" }]
+  }
+)

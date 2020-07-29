@@ -10,7 +10,7 @@ namespace MedicineCabinet_CRUD_API.Controllers
     // Try to perhaps wrap ControllerBase and inject it as a library 
     // instantiated interface for testability and DI?
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class MedicineController : ControllerBase
     {
         private readonly IMedicineService _medicineService;

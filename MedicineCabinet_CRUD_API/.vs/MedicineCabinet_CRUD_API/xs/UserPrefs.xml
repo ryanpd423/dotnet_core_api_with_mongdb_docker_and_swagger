@@ -1,14 +1,31 @@
 ﻿<Properties StartupConfiguration="{097BD525-7119-4CA4-ABB5-EB5E4A209E64}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Services/MedicineService.cs">
+    <Files>
+      <File FileName="Startup.cs" Line="34" Column="1" />
+      <File FileName="Models/MongoMedicineDbDatabaseSettings.cs" Line="16" Column="2" />
+      <File FileName="appsettings.json" Line="4" Column="22" />
+      <File FileName="Services/MedicineService.cs" Line="27" Column="1" />
+      <File FileName="Models/Medicine.cs" Line="1" Column="1" />
+      <File FileName="Program.cs" Line="16" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MedicineCabinet_CRUD_API" expanded="True">
             <Node name="MedicineCabinet_CRUD_API" expanded="True">
-              <Node name="Services" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="MedicineService.cs" selected="True" />
+              </Node>
+              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
@@ -19,7 +36,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/Ryanpd423/Desktop/Desktop_Ryans/dev/dotnet_apps/dotnet_core_api_with_mongodb_docker_and_swagger/MedicineCabinet_CRUD_API/Services/MedicineService.cs" relfile="Services/MedicineService.cs" line="22" column="9" />
+      <Breakpoint file="/Users/Ryanpd423/Desktop/Desktop_Ryans/dev/dotnet_apps/dotnet_core_api_with_mongodb_docker_and_swagger/MedicineCabinet_CRUD_API/Services/MedicineService.cs" relfile="Services/MedicineService.cs" line="23" column="9" />
+      <Breakpoint file="/Users/Ryanpd423/Desktop/Desktop_Ryans/dev/dotnet_apps/dotnet_core_api_with_mongodb_docker_and_swagger/MedicineCabinet_CRUD_API/Services/MedicineService.cs" relfile="Services/MedicineService.cs" line="27" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using MedicineCabinet_CRUD_API.Models;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
 namespace MedicineCabinet_CRUD_API.Services
@@ -14,23 +14,22 @@ namespace MedicineCabinet_CRUD_API.Services
         Task<Medicine> UpdateMedicine(Medicine medicine, string id);
         Task<DeleteResult> RemoveMedicine(string id);
     }
+
     public class MedicineService : IMedicineService
     {
         private readonly IMongoCollection<Medicine> _medicine;
 
         public MedicineService(IMongoMedicineDbDatabaseSettings settings)
         {
-            // TODO: ASAP figure out why the DI container isn't registering IMongo because settings is null, will have to hardcode for now
-            var foo = settings.ConnectionString;
             // Connects to MongoDB --TODO: create a wrapper around this so you can create a dependency
-            var client = new MongoClient("mongodb://localhost:27017");
-            // var client = new MongoClient(settings.ConnectionString);
+            // TODO: Figure out why the appSettings.json values aren't mapping into this IDbSettings dependency
+            var client = new MongoClient(settings.ConnectionString);
 
             // Gets the MedicineDB --TODO: create a wrapper around this so you can create a dependency
-            var repository = client.GetDatabase("MongoMedicineDb");
+            var repository = client.GetDatabase(settings.DatabaseName);
 
             // Fetches the medicine collection --TODO: create a wrapper around this so you can create a dependency
-            _medicine = repository.GetCollection<Medicine>("Medicines");
+            _medicine = repository.GetCollection<Medicine>(settings.MedicinesCollectionName);
         }
         public async Task<Medicine> CreateMedicine(Medicine medicine)
         {
@@ -50,9 +49,7 @@ namespace MedicineCabinet_CRUD_API.Services
         public async Task<List<Medicine>> GetMedicines()
         {
             // Get all medicines
-            // TODO: ASAP: Timing out for some reason?  Maybe disable credentials in Mongo?
-            var foo = await _medicine.Find(x => true).ToListAsync();
-            return foo;
+            return await _medicine.Find(x => true).ToListAsync();
         }
 
         public async Task<DeleteResult> RemoveMedicine(string id)

@@ -23,6 +23,8 @@ namespace MedicineCabinet_CRUD_API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IMedicineService, MedicineService>();
+
             // requires using Microsoft.Extensions.Options
             services.Configure<MongoMedicineDbDatabaseSettings>(
                 Configuration.GetSection(nameof(MongoMedicineDbDatabaseSettings)));
@@ -30,11 +32,7 @@ namespace MedicineCabinet_CRUD_API
             services.AddSingleton<IMongoMedicineDbDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<MongoMedicineDbDatabaseSettings>>().Value);
 
-            services.AddScoped<IMedicineService, MedicineService>();
-
             services.AddControllers();
-
-            Console.WriteLine("YOOOOO" + services.Count);
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>

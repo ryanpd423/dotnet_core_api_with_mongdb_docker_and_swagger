@@ -10,7 +10,7 @@
 
 * To run the app you can run `dotnet run` from within the project dir/ but the easier way is just press play in Visual Studio Code
 
-* Swagger Doc: ``
+* Swagger: `https://localhost:5001/swagger/index.html`
 
 * brew doctor
 * brew install mongodb-community@4.2
@@ -61,6 +61,12 @@ show users
 
 * Setting up some test data:
 ![test-data](setting_up_the_medicine_db_with_some_starter_data.png)
+
+* To create a new Database:
+  1) `use {name of new database}`
+  2) insert a new document/record: db.Medicines.insertOne 
+   `({"Name": "Test-Drug", "Quantity": "100", "Dosage": "20", "Brand": "RxTestCompany", "Pharmacy": "Test-Pharmacy" })`
+  * more details here => (https://docs.mongodb.com/manual/core/databases-and-collections/)
 
 
 

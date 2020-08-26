@@ -13,6 +13,7 @@ namespace MedicineCabinet_CRUD_API
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,6 +32,16 @@ namespace MedicineCabinet_CRUD_API
 
             services.AddSingleton<IMongoMedicineDbDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<MongoMedicineDbDatabaseSettings>>().Value);
+
+            // SEE DEFAULT CORS POLICY: https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-3.1
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.WithOrigins("https://localhost:5002");
+                    });
+            });
 
             services.AddControllers();
 
@@ -61,6 +72,8 @@ namespace MedicineCabinet_CRUD_API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>

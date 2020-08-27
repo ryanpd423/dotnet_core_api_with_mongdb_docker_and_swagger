@@ -13,7 +13,6 @@ namespace MedicineCabinet_CRUD_API
 {
     public class Startup
     {
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -39,7 +38,10 @@ namespace MedicineCabinet_CRUD_API
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins("https://localhost:5002");
+                        builder.WithOrigins("https://localhost:5002")
+                        .AllowAnyHeader() //had to add this because wasn't able to POST in Blazor Wasm
+                        .AllowAnyMethod()
+                        .AllowCredentials();
                     });
             });
 

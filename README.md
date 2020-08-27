@@ -68,6 +68,12 @@ show users
    `({"Name": "Test-Drug", "Quantity": "100", "Dosage": "20", "Brand": "RxTestCompany", "Pharmacy": "Test-Pharmacy" })`
   * more details here => (https://docs.mongodb.com/manual/core/databases-and-collections/)
 
+* Enabling CORS to allow the Blazor WASM Client to access this endpoint:
+* Cross-origin resource sharing (CORS)
+Browser security prevents a webpage from making requests to a different domain than the one that served the webpage. This restriction is called the same-origin policy. The same-origin policy prevents a malicious site from reading sensitive data from another site. To make requests from the browser to an endpoint with a different origin, the endpoint must enable cross-origin resource sharing (CORS)
+* **More Info on CORS**
+  * https://docs.microsoft.com/en-us/aspnet/core/blazor/call-web-api?view=aspnetcore-3.1#:~:text=To%20make%20requests%20from%20the,razor%20
+  * https://forums.asp.net/t/2168883.aspx?Request+header+field+content+type+is+not+allowed+by+Access+Control+Allow+Headers+in+preflight+response+
 
 
 
